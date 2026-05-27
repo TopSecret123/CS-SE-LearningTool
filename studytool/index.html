@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark-mono" data-font="sora">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Tool — ITO4137 Architecture & Networks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Toolbar lives outside the app root so it persists across re-renders -->
+  <div id="toolbar-root"></div>
+
+  <div class="app-wrapper">
+
+    <header class="site-header">
+      <div class="header-label">ITO4137 · Architecture & Networks · Monash University</div>
+      <h1>Study Tool</h1>
+      <p class="header-sub">Module content, assessments, and quizzes — all in one place</p>
+    </header>
+
+    <!-- Module nav + all panels render here -->
+    <div id="app-root"></div>
+
+  </div>
+
+  <!--
+    ═══════════════════════════════════════════════════════════
+    DATA FILES
+    Add new modules here by creating a new data file and
+    adding a <script> tag below. Each file calls addModule().
+    ═══════════════════════════════════════════════════════════
+  -->
+  <script src="data/module3.js"></script>
+
+  <!--
+    ═══════════════════════════════════════════════════════════
+    APP — load last so data files are already parsed
+    ═══════════════════════════════════════════════════════════
+  -->
+  <script src="app.js"></script>
+
+  <!--
+    ═══════════════════════════════════════════════════════════
+    REGISTER MODULES
+    Each data file exposes a const (e.g. MODULE3).
+    Register it here after app.js loads.
+    ═══════════════════════════════════════════════════════════
+  -->
+  <script>
+    addModule(MODULE3);
+    // addModule(MODULE4); ← add future modules here
+  </script>
+
+</body>
+</html>
